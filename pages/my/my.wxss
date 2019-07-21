@@ -1,0 +1,31 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-avatar {
+  display: inline-block;
+}
+
+.user-avatar__img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+}
+
+.menu {
+  width: 666rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 100rpx;
+  border: 1px dashed #eee;
+  margin: 12rpx 0 12rpx 0;
+}

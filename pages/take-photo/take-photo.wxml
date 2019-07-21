@@ -1,0 +1,9 @@
+<view style="display: flex; flex-direction: column; height: 100vh; {{ showShadow ? 'height: 0;' : '' }} ">
+  <camera mode="normal" device-position="back" style='flex: 1 1;'></camera>
+  <button type="primary" style='width: 100%' bind:tap='takePhoto'>拍照</button>
+</view>
+<view class="shadow" style="display: flex; flex-direction: column; width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 999; {{ showShadow ? '' : 'display: none;'}}">
+  <image src="{{ src }}" style='flex: 1 1;'></image>
+  <button type="primary" style="width: 100%" bind:tap='uploadImage'>上传</button>
+  <button type="default" style="width: 100%" bind:tap='reTakePhoto'>重拍</button>
+</view>

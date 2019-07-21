@@ -1,0 +1,14 @@
+.btn {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.name {
+  color: #000;
+  padding: 12rpx 0;
+}
+
+.commodity-show__row {
+  margin: 12rpx;
+}

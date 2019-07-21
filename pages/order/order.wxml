@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="page__hd"></view>
+  <view class="page__bd">
+    <view wx:for='{{ orderItem }}'>
+      <view class="">名称：{{ item.name }}</view>
+      <view class="">ID：{{ item.id }}</view>
+      <view class="">数量：{{ item.amount }}</view>
+      <view class="price">单价：<text class="number">{{ item.price}}</text></view>
+      <view class="price">总价：<text class="number">{{ item.price * item.amount }}</text></view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type='primary'>支付</button>
+      <button class="weui-btn" type='warn'>取消订单</button>
+    </view>
+  </view>
+</view>

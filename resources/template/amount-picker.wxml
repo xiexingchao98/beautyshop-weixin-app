@@ -1,0 +1,7 @@
+<template name='amount-picker'>
+  <view class="amount-picker" style='display: flex; align-items: center;'>
+    <view class="btn amount-picker__decrease" catch:tap='decreaseAmount' data-item-id="{{ id ? id : ''}}"><i class="material-icons">remove</i></view>
+    <view class="amount-picker__value" style='padding: 0 12rpx;'>{{ amount }}</view>
+    <view class="btn amount-picker__increase" catch:tap='increaseAmount' data-item-id="{{ id ? id : '' }}"><i class="material-icons  ">add</i></view>
+  </view>  
+</template>

@@ -1,0 +1,17 @@
+<template name='item-present'>
+  <view class="item-present">
+    <navigator wx:for='{{ item }}' url='/pages/commodity/commodity?id={{ item.id }}' class="item">
+      <image class="thumbnail" src="{{ item.cover }}" mode="aspectFill" lazy-load="true"></image>
+      <view class="info">
+        <view class="name">{{ item.name }}</view>
+        <view class="bottom-bar">
+          <view class="price">
+            <text class="number">{{ item.price }}</text>
+          </view>
+          <view class="sold">{{ item.sold }}</view>
+        </view>
+        <!-- <view class="add-cart"><i class="material-icons md-dark">add_shopping_cart</i></view> -->
+      </view>
+    </navigator>
+  </view>
+</template>

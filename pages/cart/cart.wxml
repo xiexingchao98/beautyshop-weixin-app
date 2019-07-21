@@ -1,0 +1,41 @@
+<import src='/resources/template/amount-picker.wxml' />
+<view class="page">
+  <view class="page__hd"></view>
+  <view class="page__bd">
+    <block wx:if='{{ loginStatus.isLogged }}'>
+      <block wx:if='{{ cart[0] == null }}'>
+        <view class='tip'>购物车暂时没有东西</view>
+      </block>
+      <block wx:else>
+        <form class="cart">
+          <checkbox-group bindchange="checkboxChange">
+            <label wx:for='{{ cart }}' class="weui-cell weui-check__label">
+              <checkbox class='weui-check' value='{{ checkboxItems[index].value }}' checked='{{ checkboxItems[index].checked }}' />
+              <view class="weui-cell__hd">
+                <icon wx:if='{{ checkboxItems[index].checked }}' class="weui-icon-check_success" type='success' />
+                <icon wx:else class="weui-icon-check_circle" type='circle' />
+              </view>
+              <view class="weui-cell__bd">
+                <view class="cart-item__left">
+                  <image class="cart-item__thumbnail" src="{{ item.cover }}" mode="aspectFill" ></image>
+                </view>
+                <view class="cart-item__right">
+                  <view >{{ item.name }}</view>
+                  <template is="amount-picker" data='{{ amount: item.amount, id: item.id }}' />
+                </view>            
+              </view>
+            </label>
+          </checkbox-group>
+          <view class="weui-btn-area">
+            <button class="weui-btn" type='primary' bind:tap='buyCartItem'>结算</button>
+            <button class="weui-btn" type='default' bind:tap='deleteCartItem'>删除选中</button>
+          </view>
+        </form>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="tip">暂无购物车信息</view>
+      <navigator url="/pages/my/my">前往登录页面</navigator>
+    </block>
+  </view>
+</view>

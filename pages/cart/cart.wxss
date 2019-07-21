@@ -1,0 +1,25 @@
+.cart {
+  padding: 20rpx;  
+}
+
+.cart-item {
+  display: flex;
+  box-shadow: 0 0 3px #b1b1b1;
+  border-radius: 4px;
+}
+.cart-item__left {
+  display: flex;
+}
+.cart-item__right {
+  padding: 12rpx;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item__thumbnail {
+  width: 240rpx;
+  height: 180rpx;
+}

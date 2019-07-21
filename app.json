@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cart/cart",
+    "pages/commodity/commodity",
+    "pages/my/my",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/search-result/search-result",
+    "pages/scan/scan",
+    "pages/take-photo/take-photo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Beauty Shop",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a9a9a9",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "resources/icon/outline_home_black_48dp.png",
+        "selectedIconPath": "resources/icon/baseline_home_black_48dp.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "resources/icon/outline_shopping_cart_black_48dp.png",
+        "selectedIconPath": "resources/icon/baseline_shopping_cart_black_48dp.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "resources/icon/outline_person_black_48dp.png",
+        "selectedIconPath": "resources/icon/baseline_person_black_48dp.png"
+      }
+    ]
+  }
+}

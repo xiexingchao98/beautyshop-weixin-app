@@ -1,0 +1,37 @@
+<import src='/resources/template/amount-picker.wxml' />
+<view class="page">
+  <view class="page__hd"></view>
+  <view class="page__bd">
+    <view class='commodity-show'>
+      <view >
+        <image src='{{ item.cover }}' mode='aspectFit' style='background: grey'/>
+      </view>
+      <view class="commodity-show__row">
+        <view class="price"><text class="number">{{ item.price }}</text></view>
+      </view>
+      <view class="commodity-show__row">
+        <view class="name">{{ item.name }}</view>
+      </view>
+      <view class="commodity-show__row">
+        <view style="display: flex;">
+          <view class="sold" style='flex: 1 1;'>{{ item.sold }}</view>
+          <view class="stock" style='flex: 1 1;'>{{ item.stock }}</view>
+        </view>
+      </view>
+      <view class="commodity-show__row">
+        <view class="menu">
+          <view class="" style='display: flex; justify-content: space-between; '>
+            <view class="">
+              <label>购买数量</label>
+            </view>
+            <template is="amount-picker" data='{{ amount: amount }}' />
+          </view>
+          <view class="weui-btn-area">
+            <button class="add-to-cart weui-btn" type='default' bind:tap='addToCart'>加入购物车</button>
+            <button class="buy weui-btn" type='primary' bind:tap='buyItem'>购买</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

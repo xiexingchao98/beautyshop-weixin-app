@@ -1,0 +1,30 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="profile">
+      <block wx:if="{{ loginStatus.isLogged }}">
+        <view class="profile__field">
+          <view class="user-avatar">
+            <image class="user-avatar__img" src="{{ userInfo.avatarUrl }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+          </view>
+        </view>
+        <view class="profile__field">
+          <view class="user-nickname">{{ userInfo.nickName }}</view>
+        </view>
+        <view class="profile__field">
+          <view class="user-id">ID: {{ userInfo.id }}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <button class="" type="primary" size='mini' open-type='getUserInfo' bind:getuserinfo='getUserInfo'>登录</button>
+      </block>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="menu">
+      <view wx:for="{{ menu }}" class="menu__item">
+        <i wx:if="{{ item.icon != null }}" class="material-icons md-dark md-36" style='margin-right: 50rpx'>{{ item.icon }}</i>
+        <navigator url="{{ item.url }}">{{ item.text }}</navigator>
+      </view>
+    </view>
+  </view>
+</view>

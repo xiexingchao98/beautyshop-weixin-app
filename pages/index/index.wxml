@@ -1,0 +1,35 @@
+<import src='/resources/template/item-present.wxml' />
+<view class="page">
+  <view class="page__hd">
+    <view class="topbar">
+      <view class="topbar__left">
+        <navigator class="scan" url='/pages/scan/scan'>
+          <i class="material-icons md-dark">center_focus_weak</i>
+        </navigator>
+      </view>
+      <view class="topbar__center">
+        <view class="search">
+          <input type="text" hover-class='active' placeholder="搜索" confirm-type='search' bind:confirm='search'/></view>
+        </view>
+      <view class="topbar__right">
+        <navigator class="camera" url='/pages/take-photo/take-photo'>
+          <i class="material-icons md-dark">photo_camera</i>
+        </navigator>
+      </view>
+    </view>
+    <swiper class="" indicator-dots='true' autoplay='true'>
+      <swiper-item wx:for="{{ swiperItem }}" style='background: #ccc'>
+        <image class="" src="{{ item.src }}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="page__bd">
+    <view class="classify-menu">
+      <view class="classify-menu__item" wx:for='{{ classifyMenuItem }}'>
+        <i wx:if="{{ item.icon != null }}" class="material-icons" style="margin-right: 4rpx; color: {{ item.color ? item.color : ''}}">{{ item.icon }}</i>
+        {{ item.text }}
+      </view>
+    </view>
+    <template is='item-present' data='{{ item: recommendItem }}'></template>
+  </view>
+</view>
